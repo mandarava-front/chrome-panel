@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Request Monitor",
+    "version": "1.0",
+    "permissions": [
+      "webRequest",
+      "declarativeNetRequest",
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "smart.svg",
+        "48": "smart.svg",
+        "128": "smart.svg"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+     "devtools_page": "/devtools/devtools.html"
+  }
+  
