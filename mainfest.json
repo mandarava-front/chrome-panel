@@ -1,33 +1,29 @@
 {
-    "manifest_version": 3,
-    "name": "Chrome panel DW",
-    "description":"戴维- Chrome控制台面板-订单操作",
-    "version": "1.0",
-    "permissions": [
-        "webRequest",
-     "declarativeNetRequest",
-        "activeTab",
-        "scripting",
-        "storage"
-    
-      ],
-    "content_scripts": [
-      {
-        "js":["src/content/content.ts","src/content/content.tsx"],
-        "matches":["https://n222kzro8h.feishu.cn/*"],
-        "all_frames":true,
-        "run_at":"document_end",
-        "match_about_blank":true
-      }
-    ],
-    "background": {
-      "service_worker": "src/background/service-worker.ts"
-    },
-    "action": {
-        "default_popup": "index.html"
-     
-      },
-     "devtools_page": "devtools.html"
-
-  }
-  
+  "manifest_version": 3,
+  "name": "Chrome panel DW",
+  "description": "戴维- Chrome控制台面板-订单操作",
+  "version": "1.0",
+  "permissions": [
+    "webRequest",
+    "declarativeNetRequest",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": ["src/content/content.ts", "src/content/content.tsx"],
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "run_at": "document_end",
+      "match_about_blank": true
+    }
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.ts"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "devtools_page": "devtools.html"
+}
